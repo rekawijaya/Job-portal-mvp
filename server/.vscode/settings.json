@@ -1,0 +1,7 @@
+{
+    "codeium.searchMaxWorkspaceFileCount": 0,
+    "codeium.detectProxy": false,
+    "codeium.enableCodeLens": false,
+    "codeium.enableInComments": false,
+    "codeium.enableSearch": true
+}
