@@ -34,7 +34,7 @@ const Login = () =>{
         navigate("/register");
         }
         const handleLoginEmployers = () => {
-        navigate("/login-employers");
+        navigate("/login/employers");
         }
 
 
@@ -104,20 +104,12 @@ const Login = () =>{
                 </button>
                 </div>
 
-                <div className="flex gap-4">
                 <button
                     onClick={handleLoginEmployers}
                     className="flex w-full justify-center rounded-md bg-violet-600 px-3 py-1.5 -mt-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                    Login as employers
+                    Login or Sig in as employers
                 </button>
-                <button
-                    onClick={handleSubmit}
-                    className="flex w-full justify-center rounded-md bg-violet-600 px-3 py-1.5 -mt-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                    Sign in as employers
-                </button>
-                </div>
                 </div>
             </div>
         </div>

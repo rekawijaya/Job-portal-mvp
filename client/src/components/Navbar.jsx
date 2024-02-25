@@ -15,7 +15,7 @@
     { name: 'Reports', href: '#', current: false },
     ]
     const userNavigation = [
-    { name: 'Your Profile', href: '#' },
+    { name: 'Your Profile', href: '/user/info' },
     { name: 'Settings', href: '#' },
     { name: 'Sign out', href: '#' },
     ]
