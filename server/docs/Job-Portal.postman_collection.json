@@ -1,0 +1,724 @@
+{
+	"info": {
+		"_postman_id": "6542ce2d-1a10-46de-bfe6-da32c6bed3c7",
+		"name": "Job-Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30134113"
+	},
+	"item": [
+		{
+			"name": "user-auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"user\",\r\n    \"lastName\": \"test\",\r\n    \"email\": \"usertest@mail.com\",\r\n    \"password\": \"password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"usertest@mail.com\",\r\n    \"password\": \"password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/users/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-information",
+			"item": [
+				{
+					"name": "createInformation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjI2MDgxLCJleHAiOjE3MDg3MTI0ODF9.HvRe6AjahR-QocZkwL7xIRzLcsb8fqo4CpCSH5X973I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noHp\": \"081222333444\",\r\n    \"address\": \"jalan sesuatu no 1234, kota sesuatu, kabupaten sesuatu, provinsi sesuatu\",\r\n    \"birthday\": \"2024-02-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/information"
+					},
+					"response": []
+				},
+				{
+					"name": "findInformation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjI2MDgxLCJleHAiOjE3MDg3MTI0ODF9.HvRe6AjahR-QocZkwL7xIRzLcsb8fqo4CpCSH5X973I",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/information"
+					},
+					"response": []
+				},
+				{
+					"name": "updateInformation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjI2MDgxLCJleHAiOjE3MDg3MTI0ODF9.HvRe6AjahR-QocZkwL7xIRzLcsb8fqo4CpCSH5X973I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"noHp\": \"081222333444\",\r\n    \"address\": \"jalan sesuatu no 1234, kota sesuatu, kabupaten sesuatu, provinsi sesuatu\",\r\n    \"birthday\": \"2024-02-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/information"
+					},
+					"response": []
+				},
+				{
+					"name": "findUser",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d64d2f376599d065904f3a\",\r\n \"role\":\"user\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/users/finduser"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-education",
+			"item": [
+				{
+					"name": "createEducation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"degree\": \"ok bootcamp\",\r\n    \"school\": \"binar\",\r\n    \"startDate\": \"2023-08-15\",\r\n    \"endDate\": \"2024-01-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/education"
+					},
+					"response": []
+				},
+				{
+					"name": "findEducation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/education"
+					},
+					"response": []
+				},
+				{
+					"name": "findEducationById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/education/65d7d517e6d181697150aa25"
+					},
+					"response": []
+				},
+				{
+					"name": "updateEducation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"degree\": \"update bootcamp\",\r\n    \"school\": \"binar\",\r\n    \"startDate\": \"2023-08-15\",\r\n    \"endDate\": \"2024-01-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/education/65d7d517e6d181697150aa25"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEducation",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NjQwMTEyLCJleHAiOjE3MDg3MjY1MTJ9.xvAMEzu5i6cHfdoASMc7PYr_9jd-eldQHQqKwVhMcMU",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/education/65d7d512e6d181697150aa22"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-experience",
+			"item": [
+				{
+					"name": "createExperience",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"google\",\r\n    \"position\": \"CTO\",\r\n    \"startDate\": \"2023-08-15\",\r\n    \"endDate\": \"2024-01-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/experience"
+					},
+					"response": []
+				},
+				{
+					"name": "findExperience",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/experience"
+					},
+					"response": []
+				},
+				{
+					"name": "findExperienceById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/experience/65d8a5e128a320756a752bc0"
+					},
+					"response": []
+				},
+				{
+					"name": "updateExperience",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"yahoo\",\r\n    \"position\": \"CTO\",\r\n    \"startDate\": \"2023-08-15\",\r\n    \"endDate\": \"2024-01-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/users/experience/65d8a5e128a320756a752bc0"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteExperience",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4Njk2NTcxLCJleHAiOjE3MDg3ODI5NzF9.lZV_Ttb1d--b8-D_y9tDtYg-A__3KbhEqNUCTGAH0wg",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/experience/65d8a43f291f841560f8c754"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-document",
+			"item": [
+				{
+					"name": "createDocument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "documentName",
+									"value": "cv",
+									"type": "text"
+								},
+								{
+									"key": "documentImage",
+									"type": "file",
+									"src": "/D:/photo webdev/gallery/gallery-12.jpg"
+								}
+							]
+						},
+						"url": "localhost:80/api/users/document"
+					},
+					"response": []
+				},
+				{
+					"name": "findDocument",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "localhost:80/api/users/document"
+					},
+					"response": []
+				},
+				{
+					"name": "findDocumentById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/document/65d8ef03fec77bc67f2a0fbd"
+					},
+					"response": []
+				},
+				{
+					"name": "updateDocument",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "documentName",
+									"value": "ijazah",
+									"type": "text"
+								},
+								{
+									"key": "documentImage",
+									"type": "file",
+									"src": "/D:/photo webdev/gallery/gallery-1.jpg"
+								}
+							]
+						},
+						"url": "localhost:80/api/users/document/65d8ef03fec77bc67f2a0fbd"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDocument",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDY0ZDJmMzc2NTk5ZDA2NTkwNGYzYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzE0MjgzLCJleHAiOjE3MDg4MDA2ODN9.B4mV2zmnuHZIvDy2gHK58uGB073wVb5teq2SH3qQ-LE",
+								"type": "text"
+							}
+						],
+						"url": "localhost:80/api/users/document/65d8ea3aa19409ee0c2b28b1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "employer-auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"employer@mail.com\",\r\n    \"password\":\"password\",\r\n    \"companyName\":\"employerCompany\",\r\n    \"companyDescription\":\"persusahaan tentang sesuatu\",\r\n    \"address\":\"jalan sesuatu alamat sesuatu\",\r\n    \"noHp\":\"081999888777\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/employers/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"employer@mail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/employers/login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/employers/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "findEmployer",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d91eb6a7ff22ff14fec37e\",\r\n \"role\":\"employer\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/employers/findemployer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job",
+			"item": [
+				{
+					"name": "createJob",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d91eb6a7ff22ff14fec37e\",\r\n \"role\":\"employer\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"koki\",\r\n    \"description\": \"jadi koki\",\r\n    \"location\": \"jakarta\",\r\n    \"salary\": \"10000000\",\r\n    \"requirement\": \"s3\",\r\n    \"responsbility\":\"masak nadi goreng\",\r\n    \"benefit\": \"makan malam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/jobs/createjob"
+					},
+					"response": []
+				},
+				{
+					"name": "findJob",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/jobs/findjob"
+					},
+					"response": []
+				},
+				{
+					"name": "findjobById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/jobs/findjobById/65dbb829b238fa0267ba671d"
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d91eb6a7ff22ff14fec37e\",\r\n \"role\":\"employer\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"ceo\",\r\n    \"description\": \"jadi bos\",\r\n    \"location\": \"jakarta\",\r\n    \"salary\": \"100000000\",\r\n    \"requirement\": \"s3\",\r\n    \"responsbility\": \"jadi bos\",\r\n    \"benefit\": \"makan malam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/jobs/updatejob/65dbb829b238fa0267ba671d"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJob",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d91eb6a7ff22ff14fec37e\",\r\n \"role\":\"employer\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:80/api/jobs/deletejob/65dbb94932fdd8041be06d8b"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "application",
+			"item": [
+				{
+					"name": "createapplication",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d64d2f376599d065904f3a\",\r\n \"role\":\"user\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobId\":\"65dbb91132fdd8041be06d87\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:80/api/applications/createapplication"
+					},
+					"response": []
+				},
+				{
+					"name": "findapplication",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{\r\n \"id\":\"65d64d2f376599d065904f3a\",\r\n \"role\":\"user\"\r\n}",
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"secret": "8*W#7bq6%@uCE6%#pe$MyBtTwwY5d@EG",
+								"headerPrefix": "",
+								"algorithm": "HS256",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:80/api/applications/findapplication"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost:80",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:80"
+			},
+			"response": []
+		},
+		{
+			"name": "error endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:80/jfaksjdfkl;jlg"
+			},
+			"response": []
+		}
+	]
+}
