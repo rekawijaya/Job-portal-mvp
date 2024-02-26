@@ -69,7 +69,29 @@ const login = async (request) => {
      return response;
 };
 
+const findEmployer = async (request) => {
+     const validData = validation(
+          request,
+          employerValidation.findEmployer
+     );
+
+     const user = await employerRepository.findEmployerById(validData.id);
+     if (user.length === 0) {
+          throw new ResponseError(401, "Email or password is wrong");
+     }
+     const response = {
+          id: user.id,
+          companyName: user.companyName,
+          companyDescription: user.companyDescription,
+          address: user.address,
+          noHp: user.noHp,
+     };
+
+     return response;
+};
+
 module.exports = {
      register,
      login,
+     findEmployer,
 };

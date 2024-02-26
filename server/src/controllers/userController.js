@@ -56,4 +56,22 @@ const logout = async (req, res, next) => {
      }
 };
 
-module.exports = { register, login, logout };
+const findUser = async (req, res, next) => {
+     try {
+          const request = {
+               id: req.user.id,
+          };
+
+          const response = await userService.findUser(request);
+
+          res.status(200).json({
+               message: "User found successfully!",
+               success: true,
+               data: response,
+          });
+     } catch (error) {
+          next(error);
+     }
+};
+
+module.exports = { register, login, logout, findUser };

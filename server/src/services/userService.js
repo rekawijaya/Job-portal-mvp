@@ -67,7 +67,27 @@ const login = async (request) => {
      return response;
 };
 
+const findUser = async (request) => {
+     const validData = validation(request, userValidation.findUser);
+     console.log(validData);
+     const user = await userRepository.findUserById({
+          _id: validData.id,
+     });
+     if (user.length === 0) {
+          throw new ResponseError(404, "User not found");
+     }
+
+     const response = {
+          id: user[0].id,
+          firstName: user[0].firstName,
+          lastName: user[0].lastName,
+     };
+
+     return response;
+};
+
 module.exports = {
      register,
      login,
+     findUser,
 };

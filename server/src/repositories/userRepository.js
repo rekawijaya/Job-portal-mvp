@@ -10,7 +10,13 @@ const createUser = async (data) => {
      return result;
 };
 
+const findUserById = async (id) => {
+     const result = await Users.find(id);
+     return result;
+};
+
 module.exports = {
      findUser,
      createUser,
+     findUserById,
 };

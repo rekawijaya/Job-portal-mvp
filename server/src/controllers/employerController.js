@@ -58,8 +58,26 @@ const logout = async (req, res, next) => {
      }
 };
 
+const findEmployer = async (req, res, next) => {
+     try {
+          const request = {
+               id: req.user.id,
+          };
+
+          const response = await employerService.findEmployer(request);
+
+          res.status(200).json({
+               message: "Employer found successfully!",
+               success: true,
+               data: response,
+          });
+     } catch (error) {
+          next(error);
+     }
+};
 module.exports = {
      register,
      login,
      logout,
+     findEmployer,
 };

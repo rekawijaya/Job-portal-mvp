@@ -10,7 +10,13 @@ const createEmployer = async (request) => {
      return employer;
 };
 
+const findEmployerById = async (request) => {
+     const employer = await Employers.findById(request);
+     return employer;
+};
+
 module.exports = {
      findEmployer,
      createEmployer,
+     findEmployerById,
 };

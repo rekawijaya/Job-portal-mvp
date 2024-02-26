@@ -14,7 +14,12 @@ const login = joi.object({
      password: joi.string().required(),
 });
 
+const findEmployer = joi.object({
+     id: joi.string().required(),
+});
+
 module.exports = {
      register,
      login,
+     findEmployer,
 };

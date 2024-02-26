@@ -19,6 +19,7 @@ router.use(auth.authenticate);
 router.use(auth.isUser);
 
 // user-information
+router.get("/finduser", userControler.findUser);
 router.post("/information", informationController.createInformation);
 router.get("/information", informationController.findInformation);
 router.put("/information", informationController.updateInformation);

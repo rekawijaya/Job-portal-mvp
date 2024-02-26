@@ -12,4 +12,8 @@ const login = joi.object({
      password: joi.string().required(),
 });
 
-module.exports = { register, login };
+const findUser = joi.object({
+     id: joi.string().required(),
+});
+
+module.exports = { register, login, findUser };
